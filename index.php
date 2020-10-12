@@ -88,6 +88,17 @@
     </head>
     <body class="antialiased">
     <div class="container" >
+        <div class="row">
+            
+            <div class="col-3 ml-auto text-right py-4">
+                <div class="btn-group">
+                    <button class="btn btn-outline-secondary border-right-0" type="button" id="login" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
         <div class="row" >
                 <img src="bidc.jpg" alt="" height="300px" width="100%">
         </div>
@@ -642,7 +653,7 @@
                                     <input placeholder="Localite..." oninput="this.className = ''" name="localite" type="text">
                                 </p>
                                 <p>
-                                    <input placeholder="Telephone..." oninput="this.className = ''" id="valide" type="number" name="telephone">
+                                    <input placeholder="Telephone..." oninput="this.className = ''" id="valide" type="tel" name="telephone" pattern="[0-9]{6}">
                                 </p>
                                 <p>
                                     <input placeholder="Email..." oninput="this.className = ''" type="email" name="email">
@@ -846,7 +857,7 @@
                         <div style="overflow:auto;">
                         <div style="float:right;">
                             <button type="button" id="prevBtn" class="btn btn-primary" onclick="nextPrev(-1)">Previous</button>
-                            <button type="button" id="nextBtn" class="btn btn-success"onclick="nextPrev(1)">Next</button>                           
+                            <input type="button" name="conff" id="nextBtn" class="btn btn-success"onclick="nextPrev(1)">
                             <!-- <button type="button" id="souscrir" class="btn btn-success"onclick="nextPrev(1)" data-toggle="modal" data-target="#exampleModalScrollable">Souscrir</button> -->
                         </div>
                         </div>
@@ -1642,6 +1653,9 @@
 </div>
 </body>
 <script>
+    $('#login').click(function(){
+        location.href = 'login.php';
+    });
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 });
